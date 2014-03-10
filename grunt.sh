@@ -5,7 +5,8 @@ set -e
 PACKAGE="";
 VERSION="";
 
-BASE_DIR=$(cd "../$(dirname "$0")"; pwd)
+BASE_DIR=$(dirname "`pwd`");
+HOME_DIR=$BASE_DIR'/tizi_grunt';
 BASE_PATH='application/views/static';
 
 usage() {
@@ -71,14 +72,20 @@ if [ ! -d $DEBUG_LIB_DIR ]; then
   ln -s $LIB_DIR $DEBUG_LIB_DIR
 fi
 
-echo '{"path":"../'$PACKAGE'/'$BASE_PATH'/","version": "'$VERSION'"}' > ./package.json
+echo '{"path":"../'$PACKAGE'/'$BASE_PATH'/","version": "'$VERSION'"}' > $HOME_DIR'/package.json'
 
-grunt compress:$PACKAGE:$VERSION
+grunt --gruntfile $HOME_DIR'/Gruntfile.js' compress:$PACKAGE:$VERSION
 
+<<<<<<< HEAD
+echo -e '<?php\n$config["version"]=date("YmdHi");\n$config["swfversion"]=date("YmdHis");\n$config["static_version"]="'$VERSION'";' > $HOME_DIR'/version.php'
+#echo 'cp -f version.php ../'$PACKAGE'/application/config/production/version.php';
+cp -f $HOME_DIR'/version.php' $BASE_DIR'/'$PACKAGE'/application/config/production/version.php'
+=======
 echo -e '<?php\n$config["version"]=date("YmdHi");\n$config["swfversion"]=date("YmdHis");\n$config["static_version"]="'$VERSION'";' > ./version.php
 echo 'cp -f version.php ../'$PACKAGE'/application/config/production/version.php';
 cp -f version.php ../'$PACKAGE'/application/config/production/version.php
+>>>>>>> 8269b4f7a7beea7d75bf0b4317f23f5988b7c2eb
 
-rm -f ./package.json
-rm -f ./version.php
+rm -f $HOME_DIR'/package.json'
+rm -f $HOME_DIR'/version.php'
 exit 1;
