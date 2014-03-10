@@ -102,7 +102,7 @@ module.exports = function (grunt) {
                 expand: true,
                 flatten: false,
                 cwd: sourceDir,
-                src: ['html/*', '!module/**/*.js','lib/**/*','public/**/*'],
+                src: ['!module/**/*.js','!lib/**/*','public/**/*'],
                 dest: finalDir,
                 filter: 'isFile'
             },
