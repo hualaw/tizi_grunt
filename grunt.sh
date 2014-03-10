@@ -62,7 +62,7 @@ elif [ ! -d $LIB_DIR ]; then
   echo 'error lib dir: '$LIB_DIR;exit 1;
 else
 	echo "rm -rf $COMPRESS_DIR";
-	#rm -rf $COMPRESS_DIR
+	rm -rf $COMPRESS_DIR
 fi
 
 if [ ! -d $DEBUG_LIB_DIR ]; then
@@ -77,7 +77,7 @@ grunt compress:$PACKAGE:$VERSION
 
 echo -e '<?php\n$config["version"]=date("YmdHi");\n$config["swfversion"]=date("YmdHis");\n$config["static_version"]="'$VERSION'";' > ./version.php
 echo 'cp -f version.php ../'$PACKAGE'/application/config/production/version.php';
-#cp -f version.php ../'$PACKAGE'/application/config/production/version.php
+cp -f version.php ../'$PACKAGE'/application/config/production/version.php
 
 rm -f ./package.json
 rm -f ./version.php
