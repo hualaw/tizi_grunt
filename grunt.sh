@@ -5,7 +5,8 @@ set -e
 PACKAGE="";
 VERSION="";
 
-DIR=$(cd "../$(dirname "$0")"; pwd)
+BASE_DIR=$(cd "../$(dirname "$0")"; pwd)
+BASE_PATH='application/views/static';
 
 usage() {
   cat <<EOF
@@ -19,7 +20,7 @@ OPTIONS:
 EOF
 }
 
-while getopts "hp:v:" OPTION
+while getopts "hp:v:j" OPTION
 do
   case $OPTION in
   	p)
@@ -28,6 +29,9 @@ do
     v)
     	VERSION=$OPTARG
     	;;
+    j)
+      BASE_PATH='webroot/static';
+      ;;
     h)
 		usage
 		exit 1
@@ -47,9 +51,9 @@ if [ $VERSION = "debug" ]; then
 	echo 'error param, version cannot be named '$VERSION;exit 1;
 fi
 
-DEBUG_DIR=$DIR'/'$PACKAGE'/application/views/static/debug'
-LIB_DIR=$DIR'/tizi_lib/library/views/static/lib'
-COMPRESS_DIR=$DIR'/'$PACKAGE'/application/views/static/'$VERSION
+DEBUG_DIR=$BASE_DIR'/'$PACKAGE'/'$BASE_PATH'/debug'
+LIB_DIR=$BASE_DIR'/tizi_lib/library/views/static/lib'
+COMPRESS_DIR=$BASE_DIR'/'$PACKAGE'/'$BASE_PATH''$VERSION
 DEBUG_LIB_DIR=$DEBUG_DIR'/lib'
 
 if [ ! -d $DEBUG_DIR ]; then
@@ -67,7 +71,7 @@ if [ ! -d $DEBUG_LIB_DIR ]; then
   ln -s $LIB_DIR $DEBUG_LIB_DIR
 fi
 
-echo '{"package":"'$PACKAGE'","version": "'$VERSION'"}' > ./package.json
+echo '{"path":"../'$PACKAGE'/'$BASE_PATH'/","version": "'$VERSION'"}' > ./package.json
 
 grunt compress:$PACKAGE:$VERSION
 

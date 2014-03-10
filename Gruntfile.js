@@ -2,9 +2,9 @@ module.exports = function (grunt) {
 
     var config = grunt.file.readJSON('package.json');
     
-    var sourceDir = "../"+config.package+"/application/views/static/debug";// 源码目录
+    var sourceDir = config.path+"debug";// 源码目录
     var buildDir = ".build";// 构建中间目录
-    var finalDir = "../"+config.package+"/application/views/static/"+config.version;// 最终打包目录
+    var finalDir = config.path+config.version;// 最终打包目录
     var lib_path = 'lib/';
 
     var transport = require('grunt-cmd-transport');
@@ -127,7 +127,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('compress',function(arg1,arg2){
         if (arguments.length === 2) {
-            grunt.log.writeln(this.name + " start... , project: " + arg1 + ", version: " + arg2);
+            grunt.log.writeln(this.name + " start... , package: " + arg1 + ", version: " + arg2);
             if(arg1&&arg2){
                 grunt.task.run(['transport', 'concat', 'uglify', 'css_combo', 'clean', 'copy:build','copy:image'])
             }else{
