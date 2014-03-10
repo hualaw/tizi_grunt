@@ -5,6 +5,8 @@ set -e
 PACKAGE="";
 VERSION="";
 
+DIR=$(cd "../$(dirname "$0")"; pwd)
+
 usage() {
   cat <<EOF
 usage:
@@ -17,11 +19,11 @@ OPTIONS:
 EOF
 }
 
-while getopts "h:p:v:" OPTION
+while getopts "hp:v:" OPTION
 do
   case $OPTION in
   	p)
-		PACKAGE=$OPTARG
+		  PACKAGE=$OPTARG
     	;;
     v)
     	VERSION=$OPTARG
@@ -33,21 +35,36 @@ do
   esac
 done
 
-if [ ! -n $PACKAGE -o ! -n $VERSION ]; then
+if [ ! -n "$PACKAGE" -o ! -n "$VERSION" ]; then
 	echo 'error param, package: '$PACKAGE', version: '$VERSION;exit 1;
+fi
+
+if [ $PACKAGE = "tizi_lib" ]; then
+  echo 'error param, package cannot be named '$PACKAGE;exit 1;
 fi
 
 if [ $VERSION = "debug" ]; then
 	echo 'error param, version cannot be named '$VERSION;exit 1;
 fi
 
-DEBUG_DIR='../'$PACKAGE'/application/views/static/debug'
-COMPRESS_DIR='../'$PACKAGE'/application/views/static/'$VERSION
+DEBUG_DIR=$DIR'/'$PACKAGE'/application/views/static/debug'
+LIB_DIR=$DIR'/tizi_lib/library/views/static/lib'
+COMPRESS_DIR=$DIR'/'$PACKAGE'/application/views/static/'$VERSION
+DEBUG_LIB_DIR=$DEBUG_DIR'/lib'
+
 if [ ! -d $DEBUG_DIR ]; then
-	echo 'error dir: '$DEBUG_DIR;exit 1;
+	echo 'error debug dir: '$DEBUG_DIR;exit 1;
+elif [ ! -d $LIB_DIR ]; then
+  echo 'error lib dir: '$LIB_DIR;exit 1;
 else
 	echo "rm -rf $COMPRESS_DIR";
 	#rm -rf $COMPRESS_DIR
+fi
+
+if [ ! -d $DEBUG_LIB_DIR ]; then
+  rm -f $DEBUG_LIB_DIR;
+  echo "ln -s $LIB_DIR $DEBUG_LIB_DIR";
+  ln -s $LIB_DIR $DEBUG_LIB_DIR
 fi
 
 echo '{"package":"'$PACKAGE'","version": "'$VERSION'"}' > ./package.json
