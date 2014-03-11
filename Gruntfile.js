@@ -30,7 +30,9 @@ module.exports = function (grunt) {
                     "cookies": lib_path + "cookies/0.0.1/jquery.cookies",
                     "ckeditor": lib_path + "ckeditor/4.3/ckeditor",
                     "CKSource": lib_path + "ckeditor/4.3/adapters/CKSource",
-                    "wordimage_uploader": lib_path + "java_applet/0.0.1/wordimage_uploader"
+                    "wordimage_uploader": lib_path + "java_applet/0.0.1/wordimage_uploader",
+                    "ZeroClipboard":lib_path + "ZeroClipboard/1.0.7/ZeroClipboard.1.0.7",
+                    "upload_flash":lib_path + "upload_flash/2.2/jquery.uploadify"
                 }
             },
             build: {
