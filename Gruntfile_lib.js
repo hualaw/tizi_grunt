@@ -1,6 +1,6 @@
 module.exports = function (grunt) {
 
-    var config = grunt.file.readJSON('package.json.lib');
+    var config = grunt.file.readJSON('package.json');
     
     var sourceDir = config.path+"lib";// 源码目录
     var finalDir = config.path+'lib.'+config.version;// 最终打包目录
