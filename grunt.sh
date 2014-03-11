@@ -8,6 +8,7 @@ VERSION="";
 BASE_DIR=$(dirname "`pwd`");
 HOME_DIR=$BASE_DIR'/tizi_grunt';
 BASE_PATH='application/views/static';
+BASE_GRUNTFILE='Gruntfile';
 
 usage() {
   cat <<EOF
@@ -74,7 +75,7 @@ fi
 
 echo '{"path":"../'$PACKAGE'/'$BASE_PATH'/","version": "'$VERSION'"}' > $HOME_DIR'/package.json'
 
-grunt --gruntfile $HOME_DIR'/Gruntfile.js' compress:$PACKAGE:$VERSION
+grunt --gruntfile $HOME_DIR'/'$BASE_GRUNTFILE'.js' compress:$PACKAGE:$VERSION
 
 echo -e '<?php\n$config["version"]=date("YmdHi");\n$config["swfversion"]=date("YmdHis");\n$config["static_version"]="'$VERSION'";' > $HOME_DIR'/version.php'
 #echo 'cp -f version.php ../'$PACKAGE'/application/config/production/version.php';
