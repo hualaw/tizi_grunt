@@ -76,16 +76,10 @@ echo '{"path":"../'$PACKAGE'/'$BASE_PATH'/","version": "'$VERSION'"}' > $HOME_DI
 
 grunt --gruntfile $HOME_DIR'/Gruntfile.js' compress:$PACKAGE:$VERSION
 
-<<<<<<< HEAD
 echo -e '<?php\n$config["version"]=date("YmdHi");\n$config["swfversion"]=date("YmdHis");\n$config["static_version"]="'$VERSION'";' > $HOME_DIR'/version.php'
 #echo 'cp -f version.php ../'$PACKAGE'/application/config/production/version.php';
 cp -f $HOME_DIR'/version.php' $BASE_DIR'/'$PACKAGE'/application/config/production/version.php'
-=======
-echo -e '<?php\n$config["version"]=date("YmdHi");\n$config["swfversion"]=date("YmdHis");\n$config["static_version"]="'$VERSION'";' > ./version.php
-echo 'cp -f version.php ../'$PACKAGE'/application/config/production/version.php';
-cp -f version.php ../'$PACKAGE'/application/config/production/version.php
->>>>>>> 8269b4f7a7beea7d75bf0b4317f23f5988b7c2eb
 
 rm -f $HOME_DIR'/package.json'
 rm -f $HOME_DIR'/version.php'
-exit 1;
+#exit 1;
