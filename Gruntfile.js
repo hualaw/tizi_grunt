@@ -22,6 +22,18 @@ module.exports = function (grunt) {
                 },
                 alias: {
                     "jquery": lib_path + "jquery/1.8.2/jquery",
+                    "md5": lib_path + "md5/0.0.1/md5",
+                    "tiziDialog": lib_path + "artDialog/4.1.7/artDialog",
+                    "validForm": lib_path + "Validform/5.3.2/Validform",
+                    "placeHolder": lib_path + "JPlaceholder/0.0.1/JPlaceholder",
+                    "cookies": lib_path + "cookies/0.0.1/jquery.cookies",
+                    "ckEditor": lib_path + "ckeditor/4.3/ckeditor",
+                    "ckSource": lib_path + "ckeditor/4.3/adapters/CKSource",
+                    "ckEditor_upload": lib_path + "ckeditor/4.3.upload/ckeditor",
+                    "ckSource_upload": lib_path + "ckeditor/4.3.upload/adapters/jquery",
+                    "wordImage_upload": lib_path + "java_applet/0.0.1/wordimage_uploader",
+                    "flash_upload":lib_path + "upload_flash/2.2/jquery.uploadify",
+                    "zeroClipboard":lib_path + "ZeroClipboard/1.0.7/ZeroClipboard.1.0.7",
                     //梯子公共方法
                     "tizi_ajax": lib_path + "tizi_ajax/0.0.1/tizi_ajax",
                     "tizi_datatype": lib_path + "tizi_common/0.0.1/tizi_datatype",
@@ -30,20 +42,8 @@ module.exports = function (grunt) {
                     "tizi_commonajax": lib_path + "tizi_common/0.0.1/tizi_commonajax",
                     "tizi_msg": lib_path + "tizi_common/0.0.1/tizi_msg",
                     "tizi_msgsend": lib_path + "tizi_common/0.0.1/tizi_msgsend",
-                    "tizi_feedback": lib_path + "tizi_common/0.0.1/tizi_feedback",
+                    "tizi_feedback": lib_path + "tizi_common/0.0.1/tizi_feedback"
                     //梯子公共方法结束
-                    "md5": lib_path + "md5/0.0.1/md5",
-                    "tiziDialog": lib_path + "artDialog/4.1.7/artDialog",
-                    "Validform": lib_path + "Validform/5.3.2/Validform",
-                    "Placeholder": lib_path + "JPlaceholder/0.0.1/JPlaceholder",
-                    "cookies": lib_path + "cookies/0.0.1/jquery.cookies",
-                    "ckEditor": lib_path + "ckeditor/4.3/ckeditor",
-                    "ckSource": lib_path + "ckeditor/4.3/adapters/CKSource",
-                    "ckEditor_upload": lib_path + "ckeditor/4.3.upload/ckeditor",
-                    "ckSource_upload": lib_path + "ckeditor/4.3.upload/adapters/jquery",
-                    "wordimage_uploader": lib_path + "java_applet/0.0.1/wordimage_uploader",
-                    "ZeroClipboard":lib_path + "ZeroClipboard/1.0.7/ZeroClipboard.1.0.7",
-                    "upload_flash":lib_path + "upload_flash/2.2/jquery.uploadify"
                 }
             },
             build: {
