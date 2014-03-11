@@ -22,9 +22,18 @@ module.exports = function (grunt) {
                 },
                 alias: {
                     "jquery": lib_path + "jquery/1.8.2/jquery",
-                    "tiziDialog": lib_path + "artDialog/4.1.7/artDialog",
-                    "md5": lib_path + "md5/0.0.1/md5",
+                    //梯子公共方法
                     "tizi_ajax": lib_path + "tizi_ajax/0.0.1/tizi_ajax",
+                    "tizi_datatype": lib_path + "tizi_common/0.0.1/tizi_datatype",
+                    "tizi_valid": lib_path + "tizi_common/0.0.1/tizi_valid",
+                    "tizi_validform": lib_path + "tizi_common/0.0.1/tizi_validform",
+                    "tizi_commonajax": lib_path + "tizi_common/0.0.1/tizi_commonajax",
+                    "tizi_msg": lib_path + "tizi_common/0.0.1/tizi_msg",
+                    "tizi_msgsend": lib_path + "tizi_common/0.0.1/tizi_msgsend",
+                    "tizi_feedback": lib_path + "tizi_common/0.0.1/tizi_feedback",
+                    //梯子公共方法结束
+                    "md5": lib_path + "md5/0.0.1/md5",
+                    "tiziDialog": lib_path + "artDialog/4.1.7/artDialog",
                     "Validform": lib_path + "Validform/5.3.2/Validform",
                     "Placeholder": lib_path + "JPlaceholder/0.0.1/JPlaceholder",
                     "cookies": lib_path + "cookies/0.0.1/jquery.cookies",

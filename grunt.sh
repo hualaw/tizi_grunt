@@ -54,7 +54,7 @@ fi
 
 DEBUG_DIR=$BASE_DIR'/'$PACKAGE'/'$BASE_PATH'/debug'
 LIB_DIR=$BASE_DIR'/tizi_lib/library/views/static/lib'
-COMPRESS_DIR=$BASE_DIR'/'$PACKAGE'/'$BASE_PATH''$VERSION
+COMPRESS_DIR=$BASE_DIR'/'$PACKAGE'/'$BASE_PATH'/'$VERSION
 DEBUG_LIB_DIR=$DEBUG_DIR'/lib'
 
 if [ ! -d $DEBUG_DIR ]; then
