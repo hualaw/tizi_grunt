@@ -37,8 +37,10 @@ module.exports = function (grunt) {
                     "Validform": lib_path + "Validform/5.3.2/Validform",
                     "Placeholder": lib_path + "JPlaceholder/0.0.1/JPlaceholder",
                     "cookies": lib_path + "cookies/0.0.1/jquery.cookies",
-                    "ckeditor": lib_path + "ckeditor/4.3/ckeditor",
-                    "CKSource": lib_path + "ckeditor/4.3/adapters/CKSource",
+                    "ckEditor": lib_path + "ckeditor/4.3/ckeditor",
+                    "ckSource": lib_path + "ckeditor/4.3/adapters/CKSource",
+                    "ckEditor_upload": lib_path + "ckeditor/4.3.upload/ckeditor",
+                    "ckSource_upload": lib_path + "ckeditor/4.3.upload/adapters/jquery",
                     "wordimage_uploader": lib_path + "java_applet/0.0.1/wordimage_uploader",
                     "ZeroClipboard":lib_path + "ZeroClipboard/1.0.7/ZeroClipboard.1.0.7",
                     "upload_flash":lib_path + "upload_flash/2.2/jquery.uploadify"
