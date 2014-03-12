@@ -47,13 +47,19 @@ if [ $VERSION = "js" ]; then
 fi
 
 JS_DIR=$BASE_DIR'/'$PACKAGE'/'$BASE_PATH'/js'
-COMPRESS_DIR=$JS_DIR'.'$VERSION
+COMPRESS_JS_DIR=$JS_DIR'.'$VERSION
+CSS_DIR=$BASE_DIR'/'$PACKAGE'/'$BASE_PATH'/css'
+COMPRESS_CSS_DIR=$CSS_DIR'.'$VERSION
 
 if [ ! -d $JS_DIR ]; then
 	echo 'error js dir: '$JS_DIR;exit 1;
+elif [ ! -d $CSS_DIR ]; then
+  echo 'error css dir: '$CSS_DIR;exit 1;
 else
-	echo "rm -rf $COMPRESS_DIR";
-	rm -rf $COMPRESS_DIR
+	echo "rm -rf $COMPRESS_JS_DIR";
+	rm -rf $COMPRESS_JS_DIR
+  echo "rm -rf $COMPRESS_CSS_DIR";
+  rm -rf $COMPRESS_CSS_DIR
 fi
 
 echo '{"path":"../'$PACKAGE'/'$BASE_PATH'/","version": "'$VERSION'"}' > $HOME_DIR'/package.json'

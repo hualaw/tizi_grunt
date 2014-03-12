@@ -92,7 +92,7 @@ module.exports = function (grunt) {
         css_combo: {
             options: {
                 debug: false,
-                compress: false
+                compress: true
             },
             build: {
                 files: [
