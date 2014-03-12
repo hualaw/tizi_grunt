@@ -2,13 +2,13 @@
 
 set -e
 
-PACKAGE="tizi_lib";
+PACKAGE="tizi";
 VERSION="";
 
 BASE_DIR=$(dirname "`pwd`");
 HOME_DIR=$BASE_DIR'/tizi_grunt';
-BASE_PATH='library/views/static';
-BASE_GRUNTFILE='Gruntfile_lib';
+BASE_PATH='application/views/static';
+BASE_GRUNTFILE='Gruntfile_old';
 
 usage() {
   cat <<EOF
@@ -38,19 +38,19 @@ if [ ! -n "$PACKAGE" -o ! -n "$VERSION" ]; then
 	echo 'error param, package: '$PACKAGE', version: '$VERSION;exit 1;
 fi
 
-if [ $PACKAGE != "tizi_lib" ]; then
+if [ $PACKAGE != "tizi" ]; then
   echo 'error param, package must be named '$PACKAGE;exit 1;
 fi
 
-if [ $VERSION = "lib" -o $VERSION = "debug" ]; then
+if [ $VERSION = "js" ]; then
 	echo 'error param, version cannot be named '$VERSION;exit 1;
 fi
 
-LIB_DIR=$BASE_DIR'/'$PACKAGE'/'$BASE_PATH'/lib'
-COMPRESS_DIR=$LIB_DIR'.'$VERSION
+JS_DIR=$BASE_DIR'/'$PACKAGE'/'$BASE_PATH'/js'
+COMPRESS_DIR=$JS_DIR'.'$VERSION
 
-if [ ! -d $LIB_DIR ]; then
-	echo 'error lib dir: '$LIB_DIR;exit 1;
+if [ ! -d $JS_DIR ]; then
+	echo 'error js dir: '$JS_DIR;exit 1;
 else
 	echo "rm -rf $COMPRESS_DIR";
 	rm -rf $COMPRESS_DIR
