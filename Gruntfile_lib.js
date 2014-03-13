@@ -27,7 +27,7 @@ module.exports = function (grunt) {
                     {
                         expand: true,
                         cwd: finalDir,
-                        src: ['**/**/*.js','!**/**/*-debug.js','!ckeditor/**/*.js'],
+                        src: ['**/**/*.js','!**/**/*-debug.js','!ckeditor/**/*.js','!kindeditor/**/*.js'],
                         dest: finalDir
                     }
                 ]
