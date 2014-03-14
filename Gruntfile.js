@@ -5,12 +5,40 @@ module.exports = function (grunt) {
     var sourceDir = config.path+"debug";// 源码目录
     var buildDir = ".build";// 构建中间目录
     var finalDir = config.path+config.version;// 最终打包目录
-    var lib_path = 'lib/';
 
     var transport = require('grunt-cmd-transport');
     var style = transport.style.init(grunt);
     var script = transport.script.init(grunt);
     
+    var libPath = 'lib/';
+    var aliasContent = {
+        "jquery": libPath + "jquery/1.8.2/jquery",
+        "md5": libPath + "md5/0.0.1/md5",
+        "tiziDialog": libPath + "artDialog/4.1.7/artDialog",
+        "validForm": libPath + "Validform/5.3.2/Validform",
+        "placeHolder": libPath + "JPlaceholder/0.0.1/JPlaceholder",
+        "cookies": libPath + "cookies/0.0.1/jquery.cookies",
+        "ckEditor": libPath + "ckeditor/4.3/ckeditor",
+        "ckSource": libPath + "ckeditor/4.3/adapters/CKSource",
+        "ckEditorUploader": libPath + "ckeditor/4.3.upload/ckeditor",
+        "ckSourceUploader": libPath + "ckeditor/4.3.upload/adapters/jquery",
+        "wordImageUploader": libPath + "java_applet/0.0.1/wordimage_uploader",
+        "flashUploader":libPath + "uploadify/2.2/jquery.uploadify",
+        "zeroClipboard":libPath + "ZeroClipboard/1.0.7/ZeroClipboard.1.0.7",
+        "scrollBar" : libPath + "scrollbar/0.0.1/scrollbar",
+        "clipPhoto" : libPath + "clipPhoto/0.0.1/clipPhoto",
+        //梯子公共方法
+        "tizi_ajax": libPath + "tizi_ajax/0.0.1/tizi_ajax",
+        "tizi_datatype": libPath + "tizi_common/0.0.1/tizi_datatype",
+        "tizi_valid": libPath + "tizi_common/0.0.1/tizi_valid",
+        "tizi_validform": libPath + "tizi_common/0.0.1/tizi_validform",
+        "tizi_commonajax": libPath + "tizi_common/0.0.1/tizi_commonajax",
+        "tizi_msg": libPath + "tizi_common/0.0.1/tizi_msg",
+        "tizi_msgsend": libPath + "tizi_common/0.0.1/tizi_msgsend",
+        "tizi_feedback": libPath + "tizi_common/0.0.1/tizi_feedback"
+        //梯子公共方法结束
+    };
+
     grunt.initConfig({
         // 检测js依赖
         transport: {
@@ -20,31 +48,7 @@ module.exports = function (grunt) {
                     '.js': [script.jsParser],
                     '.css': [style.css2jsParser]
                 },
-                alias: {
-                    "jquery": lib_path + "jquery/1.8.2/jquery",
-                    "md5": lib_path + "md5/0.0.1/md5",
-                    "tiziDialog": lib_path + "artDialog/4.1.7/artDialog",
-                    "validForm": lib_path + "Validform/5.3.2/Validform",
-                    "placeHolder": lib_path + "JPlaceholder/0.0.1/JPlaceholder",
-                    "cookies": lib_path + "cookies/0.0.1/jquery.cookies",
-                    "ckEditor": lib_path + "ckeditor/4.3/ckeditor",
-                    "ckSource": lib_path + "ckeditor/4.3/adapters/CKSource",
-                    "ckEditorUploader": lib_path + "ckeditor/4.3.upload/ckeditor",
-                    "ckSourceUploader": lib_path + "ckeditor/4.3.upload/adapters/jquery",
-                    "wordImageUploader": lib_path + "java_applet/0.0.1/wordimage_uploader",
-                    "flashUploader":lib_path + "uploadify/2.2/jquery.uploadify",
-                    "zeroClipboard":lib_path + "ZeroClipboard/1.0.7/ZeroClipboard.1.0.7",
-                    //梯子公共方法
-                    "tizi_ajax": lib_path + "tizi_ajax/0.0.1/tizi_ajax",
-                    "tizi_datatype": lib_path + "tizi_common/0.0.1/tizi_datatype",
-                    "tizi_valid": lib_path + "tizi_common/0.0.1/tizi_valid",
-                    "tizi_validform": lib_path + "tizi_common/0.0.1/tizi_validform",
-                    "tizi_commonajax": lib_path + "tizi_common/0.0.1/tizi_commonajax",
-                    "tizi_msg": lib_path + "tizi_common/0.0.1/tizi_msg",
-                    "tizi_msgsend": lib_path + "tizi_common/0.0.1/tizi_msgsend",
-                    "tizi_feedback": lib_path + "tizi_common/0.0.1/tizi_feedback"
-                    //梯子公共方法结束
-                }
+                alias: aliasContent
             },
             build: {
                 files: [
