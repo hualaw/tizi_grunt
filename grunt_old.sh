@@ -13,17 +13,21 @@ BASE_GRUNTFILE='Gruntfile_old';
 usage() {
   cat <<EOF
 usage:
-  $PROG -v version
+  $PROG -p package -v version
 
 OPTIONS:
+  -p   package
   -v   version
   -h   help
 EOF
 }
 
-while getopts "hv:" OPTION
+while getopts "hp:v:" OPTION
 do
   case $OPTION in
+    p)
+	PACKAGE=$OPTARG
+    	;;
     v)
     	VERSION=$OPTARG
     	;;
@@ -38,9 +42,9 @@ if [ ! -n "$PACKAGE" -o ! -n "$VERSION" ]; then
 	echo 'error param, package: '$PACKAGE', version: '$VERSION;exit 1;
 fi
 
-if [ $PACKAGE != "tizi" ]; then
-  echo 'error param, package must be named '$PACKAGE;exit 1;
-fi
+#if [ $PACKAGE != "tizi" ]; then
+#  echo 'error param, package must be named '$PACKAGE;exit 1;
+#fi
 
 if [ $VERSION = "js" ]; then
 	echo 'error param, version cannot be named '$VERSION;exit 1;
