@@ -25,6 +25,8 @@ module.exports = function (grunt) {
         "wordImageUploader": libPath + "java_applet/0.0.1/wordimage_uploader",
         "flashUploader":libPath + "uploadify/2.2/jquery.uploadify",
         "zeroClipboard":libPath + "ZeroClipboard/1.0.7/ZeroClipboard.1.0.7",
+        "wdatePicker": libPath + "My97DatePicker/4.8/WdatePicker",
+        "kindEditor": libPath + "kindeditor/4.1.10/kindeditor",
         "scrollBar" : libPath + "scrollbar/0.0.1/scrollbar",
         "clipPhoto" : libPath + "clipPhoto/0.0.1/clipPhoto",
         //梯子公共方法
@@ -35,6 +37,7 @@ module.exports = function (grunt) {
         "tizi_commonajax": libPath + "tizi_common/0.0.1/tizi_commonajax",
         "tizi_msg": libPath + "tizi_common/0.0.1/tizi_msg",
         "tizi_msgsend": libPath + "tizi_common/0.0.1/tizi_msgsend",
+        "tizi_notice": libPath + "tizi_common/0.0.1/tizi_notice",
         "tizi_feedback": libPath + "tizi_common/0.0.1/tizi_feedback"
         //梯子公共方法结束
     };
