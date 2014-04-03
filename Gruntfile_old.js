@@ -2,8 +2,8 @@ module.exports = function (grunt) {
 
     var config = grunt.file.readJSON('package.json');
     
-    var sourceDir = config.path+"js";// 源码目录
-    var finalDir = config.path+'js.'+config.version;// 最终打包目录
+    var sourceJsDir = config.path+"js";// 源码目录
+    var finalJsDir = config.path+'js.'+config.version;// 最终打包目录
     var sourceCssDir = config.path+"css";// 源码目录
     var finalCssDir = config.path+'css.'+config.version;// 最终打包目录
     
@@ -13,9 +13,9 @@ module.exports = function (grunt) {
             build: {
                 expand: true,
                 flatten: false,
-                cwd: sourceDir,
+                cwd: sourceJsDir,
                 src: ['**/**/*'],
-                dest: finalDir,
+                dest: finalJsDir,
                 filter: 'isFile'
             }
         },
@@ -28,9 +28,9 @@ module.exports = function (grunt) {
                 files: [
                     {
                         expand: true,
-                        cwd: finalDir,
+                        cwd: finalJsDir,
                         src: ['**/**/*.js','!**/**/*-debug.js','!tools/ckeditor/**/*.js','!tools/jmeditor/**/*.js'],
-                        dest: finalDir
+                        dest: finalJsDir
                     }
                 ]
             }
