@@ -29,6 +29,8 @@ module.exports = function (grunt) {
         "kindEditor": libPath + "kindeditor/4.1.10/kindeditor",
         "scrollBar" : libPath + "scrollbar/0.0.1/scrollbar",
         "clipPhoto" : libPath + "clipPhoto/0.0.1/clipPhoto",
+        "lessonFlash": libPath + "lessonFlash/0.0.1/swfobject",
+        "cloudFlash": libPath + "cloudFlash/0.0.1/swfobject",
         //梯子公共方法
         "tizi_ajax": libPath + "tizi_ajax/0.0.1/tizi_ajax",
         "tizi_datatype": libPath + "tizi_common/0.0.1/tizi_datatype",
@@ -38,7 +40,9 @@ module.exports = function (grunt) {
         "tizi_msg": libPath + "tizi_common/0.0.1/tizi_msg",
         "tizi_msgsend": libPath + "tizi_common/0.0.1/tizi_msgsend",
         "tizi_notice": libPath + "tizi_common/0.0.1/tizi_notice",
-        "tizi_feedback": libPath + "tizi_common/0.0.1/tizi_feedback"
+        "tizi_download": libPath + "tizi_common/0.0.1/tizi_download",
+        "tizi_feedback": libPath + "tizi_common/0.0.1/tizi_feedback",
+        "tizi_login_form": libPath + "tizi_common/0.0.1/tizi_login_form"
         //梯子公共方法结束
     };
 
