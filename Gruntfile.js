@@ -98,6 +98,16 @@ module.exports = function (grunt) {
                         dest: finalDir
                     }
                 ]
+            },
+            config: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: finalDir+"/public",
+                        src: ['**/**/config.js'],
+                        dest: finalDir+"/public"
+                    }
+                ]
             }
         },
         css_combo: {
@@ -153,7 +163,7 @@ module.exports = function (grunt) {
         if (arguments.length === 2) {
             grunt.log.writeln(this.name + " start... , package: " + arg1 + ", version: " + arg2);
             if(arg1&&arg2){
-                grunt.task.run(['transport', 'concat', 'uglify', 'css_combo', 'clean', 'copy:build','copy:image'])
+                grunt.task.run(['transport', 'concat', 'uglify:build', 'css_combo', 'clean', 'copy:build','copy:image', 'uglify:config'])
             }else{
                 grunt.log.writeln(this.name + " error...");
             }
