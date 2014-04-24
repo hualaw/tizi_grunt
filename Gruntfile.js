@@ -14,6 +14,8 @@ module.exports = function (grunt) {
     var aliasContent = {
         "jquery": libPath + "jquery/1.8.2/jquery",
         "md5": libPath + "md5/0.0.1/md5",
+        "json2": libPath + "json2/0.0.1/json2",
+        "mustache": libPath + "mustache/0.5.0/mustache",
         "tiziDialog": libPath + "artDialog/4.1.7/artDialog",
         "validForm": libPath + "Validform/5.3.2/Validform",
         "placeHolder": libPath + "JPlaceholder/0.0.2/JPlaceholder",
@@ -29,8 +31,6 @@ module.exports = function (grunt) {
         "kindEditor": libPath + "kindeditor/4.1.10/kindeditor",
         "scrollBar" : libPath + "scrollbar/0.0.1/scrollbar",
         "clipPhoto" : libPath + "clipPhoto/0.0.1/clipPhoto",
-        "lessonFlash": libPath + "lessonFlash/0.0.1/swfobject",
-        "cloudFlash": libPath + "cloudFlash/0.0.1/swfobject",
         //梯子公共方法
         "tizi_ajax": libPath + "tizi_ajax/0.0.1/tizi_ajax",
         "tizi_datatype": libPath + "tizi_common/0.0.1/tizi_datatype",
