@@ -61,7 +61,7 @@ module.exports = function (grunt) {
                 files: [
                     {
                         cwd: sourceDir,
-                        src: ['module/**/*.js'],
+                        src: ['module/**/*.js',libPath+'tizi_common/*.js'],
                         dest: buildDir
                     }
                 ]
