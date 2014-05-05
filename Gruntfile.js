@@ -61,7 +61,7 @@ module.exports = function (grunt) {
                 files: [
                     {
                         cwd: sourceDir,
-                        src: ['module/**/*.js'],
+                        src: ['module/**/*.js','lib/**/*.js'],
                         dest: buildDir
                     }
                 ]
@@ -78,7 +78,7 @@ module.exports = function (grunt) {
                     {
                         expand: true,
                         cwd: buildDir,
-                        src: ['**/**/*.js','!lib/*','!**/**/*-debug.js'],
+                        src: ['module/**/*.js','!lib/**/*.js','!**/**/*-debug.js'],
                         dest: finalDir
                     }
                 ]
