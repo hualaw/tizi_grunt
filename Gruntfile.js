@@ -94,7 +94,7 @@ module.exports = function (grunt) {
                     {
                         expand: true,
                         cwd: finalDir,
-                        src: ['**/**/*.js','!**/**/*-debug.js'],
+                        src: ['**/**/*.js','!**/**/*-debug.js','!**/**/*.uncompress.js'],
                         dest: finalDir
                     }
                 ]
