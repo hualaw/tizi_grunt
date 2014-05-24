@@ -77,7 +77,8 @@ echo '{"path":"../'$PACKAGE'/'$BASE_PATH'/","version": "'$VERSION'"}' > $HOME_DI
 
 grunt --gruntfile $HOME_DIR'/'$BASE_GRUNTFILE'.js' compress:$PACKAGE:$VERSION
 
-echo -e '<?php\n$config["version"]=date("YmdHi");\n$config["swfversion"]=date("YmdHis");\n$config["static_version"]="'$VERSION'";' > $HOME_DIR'/version.php'
+#echo -e '<?php\n$config["version"]=date("YmdHi");\n$config["swfversion"]=date("YmdHis");\n$config["static_version"]="'$VERSION'";' > $HOME_DIR'/version.php'
+echo -e '<?php\n$config["version"]="'$VERSION'";\n$config["swfversion"]=date("YmdHis");\n$config["static_version"]="'$VERSION'";' > $HOME_DIR'/version.php'
 #echo 'cp -f version.php ../'$PACKAGE'/application/config/production/version.php';
 cp -f $HOME_DIR'/version.php' $BASE_DIR'/'$PACKAGE'/application/config/production/version.php'
 
