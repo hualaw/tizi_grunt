@@ -26,7 +26,7 @@ while getopts "hp:v:j" OPTION
 do
   case $OPTION in
   	p)
-		  PACKAGE=$OPTARG
+		PACKAGE=$OPTARG
     	;;
     v)
     	VERSION=$OPTARG
