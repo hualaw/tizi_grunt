@@ -76,7 +76,6 @@ fi
 echo '{"path":"../'$PACKAGE'/'$BASE_PATH'/","version": "'$VERSION'"}' > $HOME_DIR'/package.json'
 
 #grunt --gruntfile $HOME_DIR'/'$BASE_GRUNTFILE'.js' compress:$PACKAGE:$VERSION
-mv $DEBUG_DIR $COMPRESS_DIR;
 
 #echo -e '<?php\n$config["version"]=date("YmdHi");\n$config["swfversion"]=date("YmdHis");\n$config["static_version"]="'$VERSION'";' > $HOME_DIR'/version.php'
 echo -e '<?php\n$config["version"]="'$VERSION'";\n$config["swfversion"]=date("YmdHis");\n$config["static_version"]="'$VERSION'";' > $HOME_DIR'/version.php'
