@@ -41,7 +41,8 @@ module.exports = function (grunt) {
                     "ckEditorUploader": "lib/ckeditor/4.3/ckeditor",
                     "ckSourceUploader": "lib/ckeditor/4.3/adapters/jquery",
                     "flashUploader": "lib/uploadify/2.2/jquery.uploadify",
-                    "jQDate": "lib/My97DatePicker/4.8/WdatePicker"
+                    "jQDate": "lib/My97DatePicker/4.8/WdatePicker",
+                    "cryptoJs": "lib/cryptoJs/3.1.2/sha1",
                 }
             },
             build: {
