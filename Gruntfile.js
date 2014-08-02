@@ -31,8 +31,7 @@ module.exports = function (grunt) {
         "kindEditor": libPath + "kindeditor/4.1.10/kindeditor",
         "scrollBar" : libPath + "scrollbar/0.0.1/scrollbar",
         "clipPhoto" : libPath + "clipPhoto/0.0.1/clipPhoto",
-        "swfObject" : libPath + "miniFlashMp3player/0.0.1/swfobject",
-        "ecSwfObject" : libPath + "evercookie/0.4.0/js/swfobject-2.2.min",
+        "swfObject" : libPath + "swfObject/2.2.0/swfobject",
         "everCookie" : libPath + "evercookie/0.4.0/js/evercookie",
         "flashCookie" : libPath + "flashcookie/1.9.1/swfstore",
         //梯子公共方法
